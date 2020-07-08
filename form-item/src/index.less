@@ -1,0 +1,119 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+  display: flex;
+  padding-top: 10px;
+  border-style: none;
+  height: 48px;
+  border-style: none;
+  font-size: 20px;
+  :global {
+    .ant-input {
+      height: 24px;
+      margin-top: 10px;
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 40px;
+    transition: all 150ms ease-in;
+    color: rgba(0,0,0,0.5);
+    font-size: 11px;
+    z-index: 1;
+    padding-left: 7px;
+    line-height: 24px;
+    font-family: "PingFang SC", Arial, Helvetica, sans-serif;
+    letter-spacing: 0;
+  }
+
+  .floating {
+    color: #FF0019;
+    :global {
+      .ant-input {
+        height: 24px;
+        margin-top: 15px;
+        background-color: #FF0019;
+      }
+    }
+  }
+}
+
+.activeLabel {
+
+  :global {
+    .ant-input {
+      height: 24px;
+      margin-top: 15px;
+    }
+  }
+}
+
+
+:global {
+  .ant-input-affix-wrapper {
+    color: #000;
+    font-size: 16px;
+    font-family: "PingFang SC", Arial, Helvetica, sans-serif;
+    line-height: 24px;
+    letter-spacing: 0;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding-bottom: 2px;
+    height: 48px;
+    display: flex;
+    width: 100%;
+  }
+  .ant-input-affix-wrapper:focus,
+  .ant-input-affix-wrapper-focused {
+    color: black;
+    background-color: #BBD6F0;
+    border-bottom: 2px solid #0091FF;
+    border-top: transparent;
+
+  }
+
+
+  .ant-input-affix-wrapper > input.ant-input {
+    background-color: transparent;
+  }
+
+
+  .ant-input-prefix {
+    margin-right: 15px;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @primary-color;
+    }
+
+  }
+  .ant-input {
+    border: none;
+    height: 24px;
+    margin-top: 10px;
+  }
+  .ant-input:focus {
+    box-shadow: none
+  }
+  .ant-form-item-has-error .ant-input,
+  .ant-form-item-has-error .ant-input-affix-wrapper,
+  .ant-form-item-has-error .ant-input:hover,
+  .ant-form-item-has-error .ant-input-affix-wrapper:hover ,
+  .ant-form-item-has-error .ant-input:focus,
+  .ant-form-item-has-error .ant-input-affix-wrapper:focus{
+    color: black;
+    background-color: #F4DEE8;
+    border-color: #F92134;
+    box-shadow: none
+  }
+
+  .ant-form-item-has-error .ant-form-item-explain,
+  .ant-form-item-has-error .ant-form-item-split {
+    margin-top: 10px;
+    padding-left: 48px;
+  }
+}
