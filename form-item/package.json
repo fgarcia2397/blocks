@@ -1,7 +1,7 @@
 {
   "name": "@umi-block/form-item",
   "version": "0.0.1",
-  "description": "",
+  "description": "Form item personalized",
   "main": "src/index.js",
   "authors": {
     "name": "fgarcia",
