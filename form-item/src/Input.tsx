@@ -10,7 +10,7 @@ const InputPassword = Input.Password;
  *
  */
 const InputAuto: React.FC<InputProps> = (props) => {
-  const { inputPassword, onChanged, error, ...restProps } = props;
+  const { inputPassword, onCopyDisabled, onPasteDisabled, error, ...restProps } = props;
   const [LabelState, setLabelState] = useState(false);
 
   /*
@@ -28,8 +28,8 @@ const InputAuto: React.FC<InputProps> = (props) => {
   /*
    * Function that disabled paste on input
    */
-  const disablePaste = (e: any) => {
-    if (props.onPasteDisabled) {
+  const disableCopyPaste = (e: any) => {
+    if (props.onCopyDisabled || props.onPasteDisabled) {
       e.preventDefault();
     }
   };
@@ -38,7 +38,7 @@ const InputAuto: React.FC<InputProps> = (props) => {
     <div className={`${styles.main} ${LabelState ? styles.activeLabel : ''}`}>
       <p className={styles.floating}>
         {LabelState && (
-          <label className={`${error ? styles.floating : ''}`}>
+          <label htmlFor="labelInput" className={`${error ? styles.floating : ''}`}>
             {props.placeholder}
             {error && '*'}
           </label>
@@ -46,9 +46,19 @@ const InputAuto: React.FC<InputProps> = (props) => {
       </p>
 
       {inputPassword ? (
-        <InputPassword onChangeCapture={labelPlaceHolder} {...restProps} />
+        <InputPassword
+          onPaste={disableCopyPaste}
+          onCopy={disableCopyPaste}
+          onChangeCapture={labelPlaceHolder}
+          {...restProps}
+        />
       ) : (
-        <Input onPaste={disablePaste} onChangeCapture={labelPlaceHolder} {...restProps} />
+        <Input
+          onPaste={disableCopyPaste}
+          onCopy={disableCopyPaste}
+          onChangeCapture={labelPlaceHolder}
+          {...restProps}
+        />
       )}
     </div>
   );

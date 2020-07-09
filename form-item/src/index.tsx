@@ -30,7 +30,7 @@ const getFormItemOptions = ({ onChanged, defaultValue, customProps = {}, rules }
  *
  */
 const LoginItem: React.FC<InputProps> = (props) => {
-  const { onChanged, customProps, defaultValue, rules, name, inputPassword, ...restProps } = props;
+  const { customProps, name, inputPassword, ...restProps } = props;
 
   if (!name) {
     return null;

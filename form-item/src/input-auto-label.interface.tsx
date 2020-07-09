@@ -76,6 +76,10 @@ export interface InputProps extends Partial<FormItemProps> {
    * Disabled paste on Input
    */
   onPasteDisabled?: boolean;
+   /*
+   * Disabled copy on Input
+   */
+  onCopyDisabled?: boolean;
   /*
    * Blur input event
    */
